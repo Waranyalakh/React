@@ -1,5 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+* {
+  font-family: "Pixelify Sans", sans-serif;
+}
+.font-link{
+  font-family: "Pixelify Sans", sans-serif;
+}
 .App {
+  width: 736px;
+  height: 944px;
+  margin: 0 auto; /* จัดให้อยู่กลางหน้าจอ */
   text-align: center;
+  border: 10px solid #333; /* ใส่กรอบให้เห็นขอบ */
+  overflow: hidden; /* ป้องกันไม่ให้มี scroll ภายใน */
+  position: relative;
+  background-image:url(./images/Bg2.jpeg) ;
+  background-size: cover;
+  background-position: center;
 }
 
 .App-logo {
@@ -12,16 +28,34 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+@keyframes pet-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+.pet-image {
+  animation: pet-bounce 1s infinite ease-in-out;
+}
 
 .App-header {
   background-color: #4a728a;
-  min-height: 20vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 30PX;
   color: white;
+  background-image: url(./images/Bg1.jpeg);
+  background-size: cover;
+  background-position: center;
+ 
+  /* font-family: 'Pixelify Sans', sans-serif; */
 }
 
 .App-link {
@@ -35,4 +69,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App, h1, h2, p, button {
+  font-family: 'Pixelify Sans', sans-serif;
 }
