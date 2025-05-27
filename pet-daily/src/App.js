@@ -1,10 +1,11 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import catpic1 from './images/catpic1.png';
 import './App.css';
 import React, { useState } from 'react';
 
 function App() {
 
-  const [petName, setPetName] = useState('น้องหมา');
+  const [petName, setPetName] = useState('น้องแมว');
   const [hunger, setHunger] = useState(5); // หิวระดับ 0-10
 
   const feedPet = () => {
@@ -13,22 +14,20 @@ function App() {
     }
   };
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <h1>~</h1>
-    //     <img src="https://cdn.lospec.com/gallery/winter-night-974409.gif"  />
-        
-    
-    //   </header>
-    // </div>
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-      <h1>เว็บเลี้ยงสัตว์รายวัน</h1>
+    <div className="App">
+      <header className="App-header">
+        <h1>Daily Pet</h1>
+      </header>
+      
       <h2>สัตว์เลี้ยงของคุณ: {petName}</h2>
-      <img src="/images/pet1.jpg" alt="น้องหมาน่ารัก" style={{width: '150px'}} />
-
+      <img src="/images/catpic1.png" alt="cat" />
+      {/* <img src={catpic1} className="App-logo" alt="catpic1" style={{ width: '150px' }} /> */}
       <p>ระดับความหิว: {hunger}</p>
-      <button onClick={feedPet}>ให้อาหาร</button>
+      <button onClick={feedPet} disabled={hunger === 0}>
+        {hunger > 0 ? 'ให้อาหาร' : 'น้องหมาอิ่มแล้ว!'}
+      </button>
       {hunger === 0 && <p>น้องหมาของคุณอิ่มแล้ว 🎉</p>}
+      
     </div>
   );
 }
